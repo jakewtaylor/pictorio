@@ -4,25 +4,16 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
+use Hashids\Hashids;
 
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        //
+class AppServiceProvider extends ServiceProvider {
+    public function register () {
+        $this->app->bind(Hashids::class, function () {
+            return new Hashids(
+                env('HASHIDS_SALT'),
+                env('HASHIDS_LENGTH'),
+                env('HASHIDS_ALPHA')
+            );
+        });
     }
 }

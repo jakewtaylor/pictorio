@@ -1,0 +1,80 @@
+@import '../../imports/colors';
+@import '../../imports/shadows';
+@import '../../imports/fonts';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome {
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error {
+    background: color(pink);
+    color: color(white);
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    @include shadow(2);
+}
+
+.card {
+    background: color(white);
+    border-radius: 5px;
+    color: color(black);
+    padding: 1em;
+    @include shadow(2);
+
+    h2 {
+        line-height: 2;
+    }
+
+    form {
+        input {
+            width: 80%;
+            display: block;
+            margin: .5em auto;
+            padding: .5em;
+            border: 1px solid lighten(color(grey), 25%);
+            border-radius: 5px;
+            font-family: $font;
+
+            &:focus {
+                outline: 0;
+                border-color: color(blue);
+            }
+
+            &[type="submit"] {
+                background: color(blue);
+                border: none;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .line {
+        height: 1px;
+        width: 60%;
+        background: color(grey);
+        margin: 2em auto;
+        margin-top: 3em;
+        position: relative;
+
+        p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            background: color(white);
+            padding: 0 .5em;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+$colors: (
+    white: #F7F7F7,
+    offwhite: #E8EDEF,
+    grey: #7B7B7E,
+    black: #313135,
+    blue: #0084CC,
+    pink: #E0354F,
+);
+
+@function color ($key) {
+    @if map-has-key($colors, $key) {
+        @return map-get($colors, $key);
+    } @else {
+        @error "Invalid key `#{$key}` given to color()";
+    }
+}

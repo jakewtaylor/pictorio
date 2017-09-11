@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:400,800);*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: #E8EDEF;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.welcome {
+  width: 95%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error {
+  background: #E0354F;
+  color: #F7F7F7;
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 3px 12px rgba(49, 49, 53, 0.23), 0 3px 12px rgba(49, 49, 53, 0.16);
+          box-shadow: 0 3px 12px rgba(49, 49, 53, 0.23), 0 3px 12px rgba(49, 49, 53, 0.16);
+}
+
+.card {
+  background: #F7F7F7;
+  border-radius: 5px;
+  color: #313135;
+  padding: 1em;
+  -webkit-box-shadow: 0 3px 12px rgba(49, 49, 53, 0.23), 0 3px 12px rgba(49, 49, 53, 0.16);
+          box-shadow: 0 3px 12px rgba(49, 49, 53, 0.23), 0 3px 12px rgba(49, 49, 53, 0.16);
+}
+
+.card h2 {
+  line-height: 2;
+}
+
+.card form input {
+  width: 80%;
+  display: block;
+  margin: .5em auto;
+  padding: .5em;
+  border: 1px solid #bbbbbd;
+  border-radius: 5px;
+  font-family: "Nunito", sans-serif;
+}
+
+.card form input:focus {
+  outline: 0;
+  border-color: #0084CC;
+}
+
+.card form input[type="submit"] {
+  background: #0084CC;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.card .line {
+  height: 1px;
+  width: 60%;
+  background: #7B7B7E;
+  margin: 2em auto;
+  margin-top: 3em;
+  position: relative;
+}
+
+.card .line p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: block;
+  background: #F7F7F7;
+  padding: 0 .5em;
+}
+
