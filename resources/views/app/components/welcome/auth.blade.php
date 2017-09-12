@@ -11,6 +11,6 @@
 <h2>Join Game</h2>
 <form action="#">
     {{ csrf_field() }}
-    <input type="text" name="game_id" id="game_id" placeholder="AABBCCDD" value="{{ old('game_id') ?? '' }}">
+    <input type="text" name="game_id" id="game_id" placeholder="ABCDEF" value="{{ old('game_id') ?? '' }}">
     <input type="submit" value="Join">
 </form>

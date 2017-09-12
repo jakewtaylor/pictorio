@@ -13,17 +13,28 @@ class GameController extends Controller {
             'created_by' => Auth::user()->id,
         ]);
 
+        $game->players()->attach(Auth::user());
+
         return redirect()->route('game', [
             'game' => $game->id,
         ]);
     }
 
     public function show (Game $game) {
-        $isOwner = Auth::user()->id === $game->created_by;
-        if (!$isOwner) {
-            return redirect()->route('home')->withErrors([
-                'You are not part of that game!',
-            ]);
+        $uid = Auth::user()->id;
+
+        $isOwner = $uid === $game->created_by;
+
+        $isPlayer = $game->players->contains(function ($u) use ($uid) {
+            return $u->id === $uid;
+        });
+
+        if (!$isOwner && !$isPlayer) {
+            return redirect()->route('home')->withErrors(['You are not part of that game!']);
         }
+
+        return view('app.game', [
+            'game' => $game,
+        ]);
     }
 }

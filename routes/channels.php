@@ -11,6 +11,14 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+use App\Game;
+
+Broadcast::channel('game.{game}', function ($user, Game $game) {
+    $isOwner = $user->id === $game->created_by;
+
+    $isInvited = $game->players->contains(function ($u) use ($user) {
+        return $u->id === $user->id;
+    });
+
+    return $isInvited || $isOwner;
 });
